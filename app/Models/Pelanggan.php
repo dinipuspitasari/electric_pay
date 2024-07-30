@@ -19,13 +19,13 @@ class Pelanggan extends Model
         'alamat',
         'id_tarif',
         'id_pelanggan',
-        'password',
+        // 'password',
         'nomor_kwh',
     ];
 
     public function tarif() 
     {
-        return $this->belongsTo(Tarif::class, 'id_tarif', 'id');
+        return $this->belongsTo(Tarif::class, 'id_tarif', 'id')->withTrashed();
     }
 
     public function user() 

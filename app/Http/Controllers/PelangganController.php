@@ -67,14 +67,17 @@ class PelangganController extends Controller
     }
     public function update(Request $request, $id)
     {
-        // dd($request);
         $pelanggan = Pelanggan::find($id);
-       $pelanggan -> update($request->all());
+        $user = $pelanggan->user;
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
 
         $pelanggan->update([
-            'id_tarif'=>$request->id_tarif,
-            'daya' => $request->daya,
-            'tarifperkwh'  => $request->tarifperkwh,
+            'id_tarif' => $request->id_tarif,
+            'no_telepon' => $request->no_telepon,
+            'alamat' => $request->alamat,
         ]);
         return redirect('/pelanggan');
     }

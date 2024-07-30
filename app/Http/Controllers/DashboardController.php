@@ -17,10 +17,11 @@ class DashboardController extends Controller
         $user = Auth::user();
 
         $getTotalPelanggan = User::where('id_level', 2)->get()->count();
+        $getTotalAdmin = User::where('id_level', 1)->get()->count();
         $getTotalTagihanBelumBayar = Tagihan::where('status', 1)->get()->count();
         $getTotalTagihanSudahBayar = Tagihan::where('status', 2)->get()->count();
 
-        return view('dashboard', compact('getTotalPelanggan', 'getTotalTagihanBelumBayar','getTotalTagihanSudahBayar'));
+        return view('dashboard', compact('getTotalAdmin','getTotalPelanggan', 'getTotalTagihanBelumBayar','getTotalTagihanSudahBayar'));
     }
     
 }

@@ -14,7 +14,7 @@
             <div class="mt-3">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ url('/tagihan/update/'.$tagihan->id)}}" method="POST" enctype="multipart/form-data" class="max-w-sm mx-auto ">
+                        <form action="{{ url('/tagihan/update/'.$tagihan->id)}}" method="POST" enctype="multipart/form-data" class="w-4/5 ">
                             @csrf
 
                             <div class="form-group row mb-5">
@@ -24,7 +24,7 @@
                                 <div class="col-sm-20">
                                     <select
                                     disabled
-                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-green-900 focus:border-green-200 block w-full p-2.5 mt-2"
+                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-blue-300 focus:border-gray-700 block w-full p-2.5 mt-2"
                                         id="id_pelanggan"
                                         name="id_pelanggan"
                                         value="{{ $tagihan->pelanggan->id }}"
@@ -46,7 +46,7 @@
                             >
                             <div class="col-sm-20">
                                 <select
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-green-900 focus:border-green-200 block w-full p-2.5 mt-2"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-blue-300 focus:border-gray-700 block w-full p-2.5 mt-2"
                                     id="bulan"
                                     name="bulan"
                                     placeholder="Masukan Bulan"
@@ -64,7 +64,7 @@
                                 <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900">Tahun</label>
                                 <div class="col-sm-10">
                                     <select
-                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-gray-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         id="tahun" name="tahun" value="{{ $tagihan }}" placeholder="Masukkan Tahun">
                                         @foreach ($tahun as $year)
                                         <option value="{{ $year }}" {{ $year == $tagihan->tahun ? 'selected' : '' }}>
@@ -80,7 +80,7 @@
                                     Awal</label>
                                 <div class="col-sm-10">
                                     <input type="text"
-                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-300 focus:border-yellow-300 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-gray-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         name="meter_awal" value="{{ $tagihan->meter_awal }}" placeholder="Masukkan Meter Awal">
                                 </div>
                             </div>
@@ -90,13 +90,13 @@
                                     Akhir</label>
                                 <div class="col-sm-10">
                                     <input type="text"
-                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-300 focus:border-yellow-300 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-gray-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         name="meter_akhir" value="{{ $tagihan->meter_akhir }}" placeholder="Masukkan Meter Akhir">
                                 </div>
                             </div>
 
                             <button type="submit"
-                                class="text-white bg-yellow-400 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Simpan</button>
+                                class="text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Simpan</button>
                         </form>
                     </div>
                 </div>

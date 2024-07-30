@@ -18,6 +18,7 @@ return new class extends Migration
             $table->float('daya');
             $table->float('tarifperkwh');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

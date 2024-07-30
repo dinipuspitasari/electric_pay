@@ -1,7 +1,6 @@
-
 @extends('layouts.admin')
 
-@section('title', 'Electric Pay | Admin')
+@section('title', 'Listrik Praktis | Admin')
 
 @section('content')
 
@@ -21,11 +20,11 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search"
-                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-yellow-300 focus:border-yellow-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
+                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-300 focus:border-grau-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
                         placeholder="Cari">
                 </div>
                 <a type="button"
-                    class="flex items-center justify-center text-white w-full md:w-48 bg-yellow-400 hover:bg-yellow-300 focus:ring-4 focus:ring-yellow-300 font-medium text-sm px-1 py-2 sm:mb-0 rounded-full"
+                    class="flex items-center justify-center text-white w-full md:w-48 bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-1 py-2 sm:mb-0 rounded-full"
                     href={{ url('/user/create') }}>
                     <svg class="w-5 h-5 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -43,8 +42,8 @@
         <hr>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left rtl:text-right text-yellow-400 px-10 ">
-            <thead class="text-xs text-white uppercase bg-yellow-400 h-8">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-900 px-10 ">
+            <thead class="text-xs text-white uppercase bg-gray-900 h-8">
                 <tr align="center">
                     <th class="border border-gray-300 px-2 py-2">No</th>
                     <th class="border border-gray-300 px-2 py-2">Nama</th>

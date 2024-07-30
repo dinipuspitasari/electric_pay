@@ -6,7 +6,7 @@
 
     {{--  Content --}}
     <div class="container">
-        <div class="mt-3 pb-4">        
+        <div class="mt-3 pb-4">
             <label for="table-search" class="sr-only">Search</label>
 
             {{-- button tambah pelanggan --}}
@@ -20,7 +20,7 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search"
-                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-yellow-300 focus:border-yellow-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
+                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-300 focus:border-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
                         placeholder="Cari">
                 </div>
                 {{-- <a type="button"
@@ -42,8 +42,8 @@
         <hr>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left rtl:text-right text-yellow-400 px-10 ">
-            <thead class="text-xs text-white uppercase bg-yellow-400 h-8">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-900 px-10 ">
+            <thead class="text-xs text-white uppercase bg-gray-900 h-8">
                 <tr align="center">
                     <th class="border border-gray-300 px-2 py-2">No</th>
                     <th class="border border-gray-300 px-2 py-2">ID Level</th>

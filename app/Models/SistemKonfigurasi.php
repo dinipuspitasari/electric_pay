@@ -17,6 +17,7 @@ class SistemKonfigurasi extends Model
     // ];
 
     protected $fillable = [
+        'config_name',
         'value',
         'description',
     ];
@@ -31,5 +32,7 @@ class SistemKonfigurasi extends Model
     
     return null;
     }
+
+    
 }
 

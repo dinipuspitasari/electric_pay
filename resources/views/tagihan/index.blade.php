@@ -20,7 +20,7 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search"
-                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-yellow-300 focus:border-yellow-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-30000 dark:focus:border-yellow-30000"
+                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-300 focus:border-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
                         placeholder="Cari">
                 </div>
                 <a type="button"
@@ -75,8 +75,8 @@
                             <td>{{ $u->created_at }}</td>
                             <td class="flex items-center justify-center py-1">
                                 <a href={{ url('/tagihan/edit/' . $u->id) }} type="button"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1.5">
-                                    <svg class="w-5 h-5 text-white dark:text-white" aria-hidden="true"
+                                    class="text-white hover:bg-blue-200 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-1 py-1">
+                                    <svg class="w-5 h-5 text-gray-900 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                         viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -86,8 +86,8 @@
                                 <a href={{ url('/tagihan/delete/' . $u->id) }}
                                     onclick="return confirm('Anda Yakin ingin Menghapus {{ $u->daya }} ?')"
                                     type="button"
-                                    class="ms-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1.5"><svg
-                                        class="w-5 h-5 text-white dark:text-white" aria-hidden="true"
+                                    class="ms-2 text-white hover:bg-red-200 focus:ring-4 focus:ring-red-400 font-medium rounded-lg text-sm px-1 py-1"><svg
+                                        class="w-5 h-5 text-gray-900 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                         viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"

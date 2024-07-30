@@ -20,7 +20,7 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search"
-                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-yellow-300 focus:border-yellow-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
+                        class="block pt-2 w-full md:w-auto ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-300 focus:border-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-300 dark:focus:border-yellow-300"
                         placeholder="Cari">
                 </div>
                 <a type="button"
@@ -79,14 +79,11 @@
                                 </svg>
                             </a>
                             <a href={{ url('/pelanggan/details/' . $u->id) }} type="button"
-                                class="text-white hover:bg-blue-200   00 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-1 py-1">
-                                <svg class="w-5 h-5 text-gray-900 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
-                                </svg>
+                                class="text-gray-900 hover:bg-green-200  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-1 py-1">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                                  </svg>
+                                  
                             </a>
                             <a href={{ url('/pelanggan/delete/' . $u->id) }}
                                 onclick="return confirm('Anda Yakin ingin Menghapus {{ $u->daya }} ?')" type="button"

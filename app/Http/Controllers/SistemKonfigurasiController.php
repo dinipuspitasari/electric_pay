@@ -16,4 +16,25 @@ class SistemKonfigurasiController extends Controller
         return view('sistem_konfigurasi.index', compact('sistem_konfigurasi'));
         
     }
+
+
+    public function edit($id)
+    {
+        $sistem_konfigurasi = SistemKonfigurasi::find($id);
+    
+        return view('sistem_konfigurasi.edit', compact('sistem_konfigurasi'));
+    }
+    public function update(Request $request, $id)
+    {
+      
+        $sistem_konfigurasi = SistemKonfigurasi::find($id);
+      
+
+        $sistem_konfigurasi->update([
+            'id'=>$id,
+            'value' => $request->value,
+            'description'  => $request->description,
+        ]);
+        return redirect('/sistem-konfigurasi');
+    }
 }

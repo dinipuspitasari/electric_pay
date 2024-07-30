@@ -19,21 +19,20 @@
         </br>
         <div class="card">
             <div class="credit-card shadow-lg flex flex-col justify-between">
-                <div class="flex justify-between items-center mb-4">
-                    <div class="chip bg-yellow-500 rounded h-12 w-16"></div>
+                <div class="flex justify-end mb-4">
                     <div class="text-lg font-bold">Electric Pay</div>
                 </div>
                 <div class="card-number text-2xl font-mono tracking-wide">
-                    4895 2456 1580 8975
+                    {{  $pelanggan->id_pelanggan }}
                 </div>
                 <div class="flex justify-between items-center mt-4">
                     <div>
-                        <div class="text-sm">MONTH/YEAR</div>
-                        <div class="text-lg font-bold">01/35</div>
-                        <div class="text-lg">robot</div>
+                        <div class="text-sm">NOMOR KWH</div>
+                        <div class="text-sm font-mono">{{  $pelanggan->nomor_kwh }}</div>
+                        <div class="text-lg font-semibold uppercase">{{ $pelanggan->user->name }}</div>
                     </div>
                     <div>
-                        <img src="https://via.placeholder.com/80x50.png" alt="E-Pay Logo" class="card-logo">
+                        <img src="/assets/img/logo2.png" alt="E-Pay Logo" class="card-logo">
                     </div>
                 </div>
             </div>

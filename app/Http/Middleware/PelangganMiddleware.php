@@ -20,6 +20,6 @@ class PelangganMiddleware
         if (Auth::user() && Auth::user()->id_level == 2) {
             return $next($request);
         }
-        return redirect('/level');
+        return redirect('/dashboard');
     }
 }

@@ -3,9 +3,11 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\SistemKonfigurasiController;
 use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\TarifController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -28,24 +30,25 @@ Route::get('/about', function () {
     return view('about');
 });
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
+
+// Route Admin
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->group(function () {
+    // level
+    Route::get('/level', [LevelController::class, 'index']);
 
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    
+    // Admin
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user/create', [UserController::class, 'create']);
+    Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
+    Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('update/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('destroy/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 
     // tarif
     Route::get('/tarif', [TarifController::class, 'index']);
@@ -75,13 +78,20 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     // sistem konfigurasi
     Route::get('/sistem-konfigurasi', [SistemKonfigurasiController::class, 'index']);
+    Route::post('/sistem-konfigurasi/update/{id}', [SistemKonfigurasiController::class, 'update']);
+    Route::get('/sistem-konfigurasi/edit/{id}', [SistemKonfigurasiController::class, 'edit']);
     
 });
 
-Route::middleware(['auth:sanctum', 'verified', 'pelanggan'])->group(function () {
-    // Route::get('/pembayaran', function () {
-    //     return view('pembayaran');
-    // });
-    //level
-    Route::get('/level', [LevelController::class, 'index']);
+
+//route pelanggan
+Route::middleware(['auth:sanctum',  config('jetstream.auth_session'), 'verified', 'pelanggan'])->group(function () {
+   
+    // Pembayaran
+    Route::get('/pembayaran', [PembayaranController::class, 'index']);
+    Route::get('/pembayaran/details/{id}', [PembayaranController::class, 'details']);
+    Route::post('/pembayaran/update/{id}', [PembayaranController::class, 'update']);
+
+    Route::get('/pembayaran/print/{id}', [PembayaranController::class, 'print'])->name('pembayaran.print');
+
 });

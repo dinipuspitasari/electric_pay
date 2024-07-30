@@ -21,12 +21,8 @@ class UserSeeder extends Seeder
                 'email' => 'admin@gmail.com',
                 'password'=> bcrypt('admin123'),
                 'id_level'=> 1,
-            ],
-            [
-                'name' => 'Robot',
-                'email' => 'robot@gmail.com',
-                'password'=> bcrypt('user123'),
-                'id_level'=> 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 
