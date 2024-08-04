@@ -1,5 +1,13 @@
 <?php
+/**
+     * Mengembalikan nama bulan berdasarkan nomor bulan.
+     *
+     * @param int $monthNumber Nomor bulan (1-12)
+     * @return string Nama bulan dalam bahasa Indonesia atau 'Invalid Month' jika nomor bulan tidak valid
+     */
     function getMonthNames($monthNumber) {
+
+        //array berisi nama bulan
         $months = [
             1 => 'Januari',
             2 => 'Februari',
@@ -15,16 +23,27 @@
             12 => 'Desember'
         ];
 
+        //mengembalikan nama bulan berdasarkan nomor bulan, atau 'Invalid Month' jika nomor bulan tidak ditemukan dalam array
         return $months[$monthNumber] ?? 'Invalid Month';
     }
 
+
+     /**
+     * Mengembalikan status pembayaran berdasarkan kode status.
+     *
+     * @param int $status Kode status pembayaran (1 atau 2)
+     * @return string Deskripsi status pembayaran
+     */
+
+
     function status($status) {
+        // Menggunakan switch-case untuk menentukan deskripsi status berdasarkan kode status
         switch ((int) $status) {
             case 1:
-                return 'Menunggu Pembayaran';
+                return 'Menunggu Pembayaran'; // Deskripsi untuk status menunggu pembayaran
             case 2:
-                return 'Sudah Bayar';    
+                return 'Sudah Bayar'; // Deskripsi untuk status sudah bayar 
             default:
-                return '';
+                return '';  // Mengembalikan string kosong jika kode status tidak dikenali
         }
     }

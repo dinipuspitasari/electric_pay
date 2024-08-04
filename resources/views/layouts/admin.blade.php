@@ -39,8 +39,13 @@
                     </a>
                 </div>
                 <div class="flex items-center">
+                    
                     <div class="flex items-center ms-3">
+                        <div class="me-3">
+                            {{ Auth::user()->name }}
+                        </div>
                         <div>
+                            <div></div>
                             <button type="button"
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                                 data-dropdown-toggle="dropdown-user">
@@ -62,24 +67,23 @@
                             </div>
                             <ul class="py-1" role="none">
                                 <li>
-                                    <a href="#"
+                                    <a href="/dashboard"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                                         role="menuitem">Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#"
+                                    <a href="/profile"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">Settings</a>
+                                        role="menuitem">profile</a>
                                 </li>
                                 <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        <a href="{{ route('logout') }}"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                            role="menuitem">Logout</a>
+                                    <form action="{{ route('logout') }}" method="POST" class="inline">
+                                        @csrf
+                                        <button type="submit"
+                                            class="flex items-start w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                            <span class="ms-3 whitespace-nowrap">Keluar</span>
+                                        </button>
                                     </form>
-
-                                </li>
-                                <li>
                                 </li>
                             </ul>
                         </div>

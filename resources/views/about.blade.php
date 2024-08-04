@@ -136,21 +136,21 @@
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Navigation</h2>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Navigasi</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-semibold">
                       <li class="mb-4">
-                          <a href="#" class="hover:underline">Home</a>
+                          <a href="/" class="hover:underline">Beranda</a>
                       </li>
                       <li class="mb-4">
-                          <a href="#" class="hover:underline">About</a>
+                          <a href="#" class="hover:underline">Tentang</a>
                       </li>
                       <li>
-                        <a href="#" class="hover:underline">Login</a>
+                        <a href="/login" class="hover:underline">Masuk</a>
                     </li>
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ikuti Kami</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-semibold">
                       <li class="mb-4">
                           <a href="https://github.com/dinipuspitasari" class="hover:underline ">Github</a>
@@ -164,7 +164,7 @@
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</h2>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Kontak Kami</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-semibold">
                       <li class="mb-4">
                           <a class="hover:underline">Jl. Bidara Anggrek No.21, <br>Jakarta Barat, indonesia</a>

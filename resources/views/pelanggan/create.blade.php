@@ -14,7 +14,7 @@
             <div class="mt-3">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('pelanggan.create') }}" method="POST" enctype="multipart/form-data" class="max-w-sm mx-auto">
+                        <form action="{{ route('pelanggan.create') }}" method="POST" enctype="multipart/form-data" class="w-4/5">
                             @csrf
 
                             <div class="form-group row mb-5">

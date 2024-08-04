@@ -17,9 +17,9 @@ class SistemKonfigurasiSeeder extends Seeder
     {
         $config_system = [
             [
-                'config_name' => 'biaya admin',
+                'config_name' => 'biaya_admin',
                 'value' => '3000',
-                'description' => "Biaya Admin",
+                'description' => "Biaya_Admin",
                 "created_at" => now(),
                 "updated_at"=> now(),
             ],

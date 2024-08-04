@@ -13,62 +13,114 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
         <title>Print Struk Pembayaran</title>
+
+        <style>
+            /* body{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color:#333;
+                text-align:left;
+                font-size:18px;
+                margin:0;
+            }
+            .container{
+                margin:0 auto;
+                margin-top:35px;
+                padding:40px;
+                width:750px;
+                height:auto;
+                background-color:#fff;
+            } */
+            caption{
+                text-align: center;
+                font-size:28px;
+                margin-bottom:15px;
+            }
+            table{
+                border:1px solid #333;
+                border-collapse:collapse;
+                margin:0 auto; */
+                /* /* width:740px; */
+            }
+            td, tr, th{
+                padding:12px;
+                border:1px solid #333;
+                width:185px;
+            }
+            th{
+                background-color: #f0f0f0;
+            }
+            h4, p{
+                margin:0px;
+            }
+        </style>
     </head>
     <body>
-        {{-- <img src="{{ public_path('/assets/img/logo2.png') }}" alt="Logo"> --}}
-        
-        <p>Jl. Bidara Anggrek No.21, <br>
-            Jakarta Barat, indonesia</p>
-        <p>089696634771</p>
-        <h5>Struk Pembayaran Tagihan Listrik Elpay</h5>
-        </br>
-        <table class="table font-mono">
-            <tr>
-                <th scope="col" class="font-mono">Tanggal Dibayar</th>
-                <th scope="col">: {{date('d-m-Y', strtotime($pembayaran->tanggal_pembayaran))}}</th>
-            </tr>
-            <tr>
-                <th scope="col">Id Pelanggan</th>
-                <th scope="col">: {{$tagihan->pelanggan->id_pelanggan }}</th>
-            </tr>
-            <tr>
-                <th scope="col">Nama Pelanggan</th>
-                <th scope="col">: {{$tagihan->pelanggan->user->name }}</th>
-            </tr>
-            <tr>
-                <th scope="col">Nomor KWH</th>
-                <th scope="col">: {{$tagihan->pelanggan->nomor_kwh }}</th>
-            </tr>
-            <tr>
-                <th scope="col">Daya</th>
-                <th scope="col">: {{$tagihan->pelanggan->tarif->daya }}VA</th>
-            </tr>
-            
-            <tr>
-                <th scope="col">Biaya Admin</th>
-                <th scope="col">: Rp. {{ number_format($pembayaran->biaya_admin)}}</th>
-            </tr>
-            <tr>
-                <th scope="col">Jumlah Meter</th>
-                <th scope="col">: {{$tagihan->jumlah_meter}}</th>
-            </tr>
-            <tr>
-                <th scope="col">Total Bayar</th>
-                <th scope="col">: Rp. {{ number_format($pembayaran->total_bayar)}}</th>
-            </tr>
-        </table>
-        <p>Elpay Menyatakan Struk ini sebagai bukti pembayaran yang sah, mohon disimpan.</p>
+        <div>
+            <img src="C:\xampp\htdocs\electric pay\public\assets\img\logo2.png" class="w-32" alt="logo elpay">
+            <table>
+                <caption>
+                    Electric Pay Invoice
+                </caption>
+                <thead>
+                    <tr>
+                        <th colspan="3">Invoice <strong>#{{$pembayaran->id}}</strong></th>
+                        <th>{{ \Carbon\Carbon::parse($pembayaran->tanggal_pembayaran)->translatedFormat('l, d-m-Y') }}</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h4>Perusahaan :</h4>
+                            <h5>Electric Pay</h5>
+                            <p>Jl. Bidara Anggrek No.21, <br>
+                                Jakarta Barat, indonesia</p>
+                                <p>089696634771</p>
+                                <p>elpay@gmail.com</p>
+                        </td>
+                        <td colspan="2">
+                            <h4>Pelanggan :</h4>
+                            <p>Nama : {{$tagihan->pelanggan->user->name }}</p>
+                            <p>Id : {{$tagihan->pelanggan->id_pelanggan }}</p>
+                            <p>Nomor KWh : {{$tagihan->pelanggan->nomor_kwh }}</p>
+                            <p>Daya : {{$tagihan->pelanggan->tarif->daya }}VA</p>
+                            <p>Alamat : {{$tagihan->pelanggan->alamat}}</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Meter Awal</th>
+                        <th>Meter Akhir</th>
+                        <th>Jumlah Meter</th>
+                        <th>Sub Total</th>
+                    </tr>
+                    <tr>
+                        <td>{{$tagihan->meter_awal}} kWh</td>
+                        <td>{{$tagihan->meter_akhir}} kWh</td>
+                        <td>{{$tagihan->jumlah_meter}} kWh</td>
+                        <td>Rp. {{number_format($tagihan->jumlah_meter * $tagihan->pelanggan->tarif->tarifperkwh)}}</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">Biaya Admin</th>
+                        <td>Rp. {{ number_format($pembayaran->biaya_admin)}}</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">Total</th>
+                        <td>Rp. {{ number_format($pembayaran->total_bayar)}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
 
-        <footer class="fixed bottom-0 bg-white">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-              <footer>
-                <p> &copy; 2024 Electric Pay™. All Rights Reserved.  </p>
-              </div>
+            <footer class="fixed bottom-0 bg-white ps-10">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                  <footer>
+                    <p> &copy; 2024 Electric Pay™. All Rights Reserved.  </p>
+                  </div>
+                  </footer>
+                </div>
               </footer>
-            </div>
-          </footer>
+        </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>

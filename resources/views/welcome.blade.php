@@ -109,9 +109,9 @@
         <div class="grid md:grid-cols-2">
             <div class="flex items-center order-2 sm:order-none">
                 <div class="px-4 py-6">
-                <h2 class="text-gray-900 text-3xl font-medium mb-2">Layanan Pembayaran Listrik Online</h2>
+                <h2 class="text-gray-900 text-3xl font-medium mb-2">Bayar Listrik dengan Mudah</h2>
                 <br>
-                <p class="text-lg font-normal text-gray-900  mb-4">Nikmati kemudahan mengelola pembayaran listrik dari mana pun. <br> Sistem pembayaran online kami memungkinkan Anda membayar tagihan listrik dengan cepat dan aman, tanpa perlu mengunjungi lokasi fisik.</p>
+                <p class="text-lg font-normal text-gray-900  mb-4">Bayar listrik dengan mudah dan praktis menggunakan website kami! Tidak perlu antre, bayar kapan saja dan di mana saja. Hemat waktu dan tenaga dengan proses pembayaran yang cepat, aman, dan nyaman langsung dari gadget anda</p>
                 </div>
             </div>
             <div class="flex items-center justify-center order-1 sm:order-none">
@@ -123,7 +123,7 @@
 
 
 {{-- footer start --}}
-<footer class=" dark:bg-gray-900">
+<footer>
     <hr>
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
@@ -137,21 +137,21 @@
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Navigation</h2>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Navigasi</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-semibold">
                       <li class="mb-4">
-                          <a href="#" class="hover:underline">Home</a>
+                          <a href="#" class="hover:underline">Beranda</a>
                       </li>
                       <li class="mb-4">
-                          <a href="#" class="hover:underline">About</a>
+                          <a href="/about" class="hover:underline">Tentang</a>
                       </li>
                       <li>
-                        <a href="#" class="hover:underline">Login</a>
+                        <a href="/login" class="hover:underline">Masuk</a>
                     </li>
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ikuti Kami</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-semibold">
                       <li class="mb-4">
                           <a href="https://github.com/dinipuspitasari" class="hover:underline ">Github</a>
@@ -165,7 +165,7 @@
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</h2>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Kontak Kami</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-semibold">
                       <li class="mb-4">
                           <a class="hover:underline">Jl. Bidara Anggrek No.21, <br>Jakarta Barat, indonesia</a>

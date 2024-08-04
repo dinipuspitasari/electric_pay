@@ -31,4 +31,15 @@ class LevelController extends Controller
         ]);
         return redirect('/level');
     }
+
+    public function delete(Request $request, $id)
+{
+    $level = Level::find($id);
+
+    if ($level) {
+        $level->delete();
+    }
+
+    return redirect('/level');
+}
 }

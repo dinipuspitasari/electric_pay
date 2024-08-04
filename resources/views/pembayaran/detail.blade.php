@@ -64,11 +64,11 @@
                 </div>
                 <div>
                     <p class="text-gray-600">Biaya Admin</p>
-                    <p class="font-medium">Rp. {{ number_format($pembayaran->biaya_admin)}}</p>
+                    <p class="font-medium">Rp. {{ number_format($biaya_admin)}}</p>
                 </div>
                 <div>
                     <p class="text-gray-600">Total Bayar</p>
-                    <p class="font-medium text-orange-600">Rp. {{ number_format($pembayaran->total_bayar)}}</p>
+                    <p class="font-medium text-orange-600">Rp. {{ number_format($total_bayar)}}</p>
                 </div>
             </div>
             <div>
@@ -107,7 +107,7 @@
                 <div class="mt-3 flex justify-between w-4/5">
                 {{-- <p>$yourDateTime->format('d-m-Y H:i')</p> --}}
                 <div>
-                <p class="text-gray-600 font-medium">Dibayar Pada : {{date('d-m-Y H:i', strtotime($pembayaran->tanggal_pembayaran));}}</p>
+                <p class="text-gray-600 font-medium">Dibayar Pada : {{ \Carbon\Carbon::parse($pembayaran->tanggal_pembayaran)->translatedFormat('l, d-m-Y H:i') }}</p>
                 </div>
                 <div>
                 <a href={{ url('/pembayaran/print/' . $pembayaran->id) }} type="button"

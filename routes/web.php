@@ -25,6 +25,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 Route::get('/about', function () {
     return view('about');
@@ -39,16 +42,20 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'admin'])->group(function () {
     // level
     Route::get('/level', [LevelController::class, 'index']);
+    Route::get('/level/create', [LevelController::class, 'create']);
+    Route::post('/level/create', [LevelController::class, 'store']);
+    Route::post('/level/update/{id}', [LevelController::class, 'update']);
+    Route::get('/level/edit/{id}', [LevelController::class, 'edit']);
+    Route::get('/level/delete/{id}', [LevelController::class, 'delete']);
 
     
     // Admin
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/user/create', [UserController::class, 'create']);
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
     Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
-    Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit');
-    Route::post('update/{user}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('destroy/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('/user/update/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/user/destroy/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 
     // tarif
     Route::get('/tarif', [TarifController::class, 'index']);
@@ -57,11 +64,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::post('/tarif/update/{id}', [TarifController::class, 'update']);
     Route::get('/tarif/edit/{id}', [TarifController::class, 'edit']);
     Route::get('/tarif/delete/{id}', [TarifController::class, 'delete']);
+    Route::get('/tarif/search', [TarifController::class, 'search']);
 
 
     // pelanggan
     Route::get('/pelanggan', [PelangganController::class, 'index']);
     Route::get('/pelanggan/details/{id}', [PelangganController::class, 'details']);
+    Route::get('/pelanggan/search', [PelangganController::class, 'search']);
     Route::get('/pelanggan/create', [PelangganController::class, 'create'])->name('pelanggan.create');
     Route::post('/pelanggan/create', [PelangganController::class, 'store'])->name('pelanggan.store');
     Route::post('/pelanggan/update/{id}', [PelangganController::class, 'update']);

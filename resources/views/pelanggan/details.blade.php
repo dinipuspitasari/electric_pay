@@ -3,16 +3,10 @@
 @section('title', 'Electric Pay | Detail Pelanggan')
 
 @section('content')
-    <div class="container">
+    <div class="container mb-10">
     <div class="col">
         <div class="flex justify-between">
-            <h2 class="text-3xl"> Edit Pelanggan</h2>
-
-            <a type="button"
-                            class="flex items-center justify-center text-white w-full md:w-48 bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-1 py-2 sm:mb-0 rounded-full"
-                            href={{ url('/pelanggan') }}>
-                            Kembali</a>
-            <hr>
+            <h2 class="text-3xl"> Detail Pelanggan</h2>
         </div>
     </div>
         </br>
@@ -37,13 +31,33 @@
                 </div>
             </div>
         
-            <div class="card-body">
-                <p>Id Pelanggan = {{  $pelanggan->id_pelanggan }}</p>
-                <p>Nama Pelanggan = {{ $pelanggan->user->name }} </p>
-                <p>Email =  {{  $pelanggan->user->email }}</p>
-                <p>Alamat =  {{  $pelanggan->alamat }}</p>
-                <p>Nomor KWh =  {{  $pelanggan->nomor_kwh }}</p>
-                <p>daya =  {{  $pelanggan->tarif->daya }} VA</p>
+            <div class="card-body mt-5">
+                <table class="w-full text-sm text-left rtl:text-right bg-white rounded">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Id Pelanggan</th>
+                        <td scope="col" class="px-6 py-3">{{  $pelanggan->id_pelanggan }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Nama Pelanggan</th>
+                        <td scope="col" class="px-6 py-3">{{  $pelanggan->user->name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Email</th>
+                        <td scope="col" class="px-6 py-3">{{  $pelanggan->user->email }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Alamat</th>
+                        <td scope="col" class="px-6 py-3">{{   $pelanggan->alamat }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Nomor kWh</th>
+                        <td scope="col" class="px-6 py-3">{{  $pelanggan->nomor_kwh }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Daya</th>
+                        <td scope="col" class="px-6 py-3">{{   $pelanggan->tarif->daya }} VA</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

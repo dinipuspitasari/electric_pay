@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Level;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->id_level == 1) {
+        if (Auth::user() && Auth::user()->id_level == Level::where('nama_level', 'Administrator')->first()->id) {
             return $next($request);
         }
         return redirect('/dashboard');

@@ -16,11 +16,15 @@
                         <div class="card-body">
                             <form action={{url('/tarif/update/'.$tarif->id)}} method="POST" enctype="multipart/form-data" class="w-4/5">
                                 @csrf
+                                @method('POST') {{-- Tambahkan ini jika menggunakan method PUT untuk update --}}
     
                                 <div class="form-group row mb-5">
                                     <label for="daya" class="block mb-2 text-sm font-medium text-gray-900">Daya</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-gray-900 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="daya" value="{{$tarif->daya}}"placeholder="Masukkan Daya">
+                                        <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-gray-900 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="daya" value="{{ old('daya', $tarif->daya) }}" placeholder="Masukkan Daya">
+                                        @if ($errors->has('daya'))
+                                            <span class="text-red-500 text-sm">{{ $errors->first('daya') }}</span>
+                                        @endif
                                     </div>
                                 </div>
     
@@ -28,7 +32,10 @@
                                     <label for="tarifperkwh" class="col-md-2 col-form-label">Tarif PerKwh</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-gray-900 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="tarifperkwh"
-                                        value="{{$tarif->tarifperkwh}}" placeholder="Masukkan Tarif">
+                                        value="{{ old('tarifperkwh', $tarif->tarifperkwh) }}" placeholder="Masukkan Tarif">
+                                        @if ($errors->has('tarifperkwh'))
+                                            <span class="text-red-500 text-sm">{{ $errors->first('tarifperkwh') }}</span>
+                                        @endif
                                     </div>
                                 </div>
     

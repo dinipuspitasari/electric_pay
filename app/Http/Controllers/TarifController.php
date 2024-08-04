@@ -8,42 +8,30 @@ use App\Models\Tarif;
 
 class TarifController extends Controller
 {
+    // menampilkan daftar tarif
     public function index()
     {
-        $tarif = Tarif::all();
-        return view('tarif.index', compact('tarif'));
-        // return view('tarif.index');
+        $tarif = Tarif::all(); //mengambil semua data tarif dari tarif model
+        return view('tarif.index', compact('tarif')); //mengembalikan view dengan data tarif
     }
 
+    //membuat function create untuk membuat tarif baru
     public function create()
     {
-        $tarif = Tarif::all();
-        return view('tarif.create', compact('tarif'));
+        $tarif = Tarif::all(); // Mengambil semua data tarif dari model Tarif (jika diperlukan)
+        return view('tarif.create', compact('tarif'));  // Mengembalikan view form pembuatan tarif baru
     }
 
+    //Menyimpan tarif baru ke dalam basis data
     public function store(Request $request)
     {
+         // Membuat entri tarif baru di basis data
             $tarif = Tarif::create([
-                'daya' => $request->daya,
-                'tarifperkwh' => $request->tarifperkwh,
+                'daya' => $request->daya, // Mengambil nilai daya dari request
+                'tarifperkwh' => $request->tarifperkwh, // Mengambil nilai tarifperkwh dari request
         ]);
-        return redirect('/tarif');
+        return redirect('/tarif'); // Mengarahkan kembali ke halaman daftar tarif
     }
-
-    // public function update(Request $request, $id)
-    // {
-    //     $tarif = Tarif::find($id);
-    //     $tarif->update($request->all());
-    //     return redirect('/tarif');
-    // }
-
-    // public function edit($id)
-    // {
-
-    //     $tarif = Tarif::find($id);
-    //     // dd($data);
-    //     return view('tarif.edit', ['tarif' => $tarif]);
-    // }
 
     public function edit($id)
     {
@@ -70,16 +58,22 @@ class TarifController extends Controller
         
         $tarif = Tarif::find($id); 
         // dd($tarif);
-        $tarif->delete();
+        if ($tarif) {
+            $tarif->delete(); // Pastikan menggunakan soft delete
+        }
         return redirect('/tarif');
         
     }
 
-    // public function destroy(Request $request)
-    // {
-    //     $tarif = Tarif::where("id_tarif", $request->input('id') )->first();
-    //     $tarif->delete();
-    //     return redirect('/tarif');
-    //     // dd($id);
-    // }
+    public function search(Request $request)
+    {
+        if ($search = $request->input('search')) {
+        $tarif = Tarif::where('daya', 'LIKE', "%{$search}%")
+                      ->orWhere('tarifperkwh', 'LIKE', "%{$search}%")
+                      ->get();
+        } else{
+            $tarif = Tarif::all();
+        }
+        return view('tarif.index', compact('tarif'));
+    }
 }
