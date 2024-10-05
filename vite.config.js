@@ -12,9 +12,9 @@ export default defineConfig({
                 ...refreshPaths,
                 'app/Http/Livewire/**',
             ],
-            build: {
-                outDir: 'public'  // Ubah 'public' sesuai dengan direktori yang diinginkan
-              },
         }),
     ],
+    build: {
+        outDir: 'public',  // Ubah 'public' sesuai dengan direktori yang diinginkan
+    },
 });
