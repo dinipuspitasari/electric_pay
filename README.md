@@ -11,9 +11,9 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="License"></a>
 </p>
 
-# Simple Library
+# Electric Pay (Elpay)
 
-Simple Library adalah aplikasi perpustakaan berbasis **Laravel 12 + Jetstream**.
+Electric Pay adalah sebuah website pembayaran listrik secara online **Laravel 11 + Jetstream**.
 
 ---
 
