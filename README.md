@@ -29,8 +29,8 @@ Simple Library adalah aplikasi perpustakaan berbasis **Laravel 12 + Jetstream**.
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/dinipuspitasari/simple-library.git
-cd simple-library
+git clone https://github.com/dinipuspitasari/electric_pay.git
+cd electric_pay
 ```
 
 ### 2. Install PHP Dependencies
